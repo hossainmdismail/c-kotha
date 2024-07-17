@@ -1,5 +1,9 @@
 @extends('Themes.theme1.layout.app')
 
+@section('style')
+    <link rel="canonical" href="{{ 'https://chotikotha.com/' . request()->getPathInfo() }}">
+@endsection
+
 @section('content')
     <section class="not-found d-flex align-items-center padding-30" style="height: 65vh;">
         <div class="container text-center">
