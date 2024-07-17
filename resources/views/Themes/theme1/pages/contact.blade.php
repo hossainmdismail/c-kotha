@@ -60,13 +60,28 @@
             <div class="spacer" data-height="50" style="height: 50px;"></div>
 
             <!-- section header -->
-            <div class="section-header">
+            {{-- <div class="section-header">
                 <h3 class="section-title">Send Message</h3>
                 <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave">
+            </div> --}}
+            <div class="row">
+                <div class="col-4 m-auto">
+                    <!-- widget about -->
+                    <div class="widget rounded">
+                        <div class="widget-about data-bg-image text-center"
+                            data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
+                            <p class="mb-4 bd-font mb-3" style="color: #203656">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম
+                                যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
+                                কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
+                            </p>
+                            <button class="btn btn-default btn-full" type="submit">Share story</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Contact Form -->
-            <form id="contact-form" class="contact-form" method="post">
+            {{-- <form id="contact-form" class="contact-form" method="post">
 
                 <div class="messages"></div>
 
@@ -111,7 +126,7 @@
                 <button type="submit" name="submit" id="submit" value="Submit" class="btn btn-default">Submit
                     Message</button><!-- Send Button -->
 
-            </form>
+            </form> --}}
             <!-- Contact Form end -->
         </div>
     </section>

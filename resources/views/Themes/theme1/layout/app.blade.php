@@ -41,9 +41,6 @@
 </head>
 
 <body class="bd-font">
-
-
-
     <!-- preloader -->
     <div id="preloader">
         <div class="book">

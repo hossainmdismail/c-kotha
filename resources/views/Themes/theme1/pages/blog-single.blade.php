@@ -141,10 +141,11 @@
                         <div class="widget rounded">
                             <div class="widget-about data-bg-image text-center"
                                 data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
-                                <p class="mb-4 bd-font">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম যেখানে আপনি আপনার অভিজ্ঞতা ও
-                                    স্বীকারোক্তি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার কাহিনী শুনুন ও অন্যদের
-                                    কাহিনী পড়ুন
+                                <p class="mb-4 bd-font mb-3" style="color: #203656">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম
+                                    যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
+                                    কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
                                 </p>
+                                <button class="btn btn-default btn-full" type="submit">Share story</button>
                             </div>
                         </div>
 
