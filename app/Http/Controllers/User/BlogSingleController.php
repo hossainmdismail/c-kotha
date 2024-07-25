@@ -23,7 +23,7 @@ class BlogSingleController extends Controller
         $related = [];
         //getting related blo
         if ($blog->category_id) {
-            $related = Blog::where('category_id', 100000)->where('id', '!=', $blog->id)->orderBy('created_at', 'desc')->take(4)->get();
+            $related = Blog::where('category_id', $blog->category_id)->where('id', '!=', $blog->id)->orderBy('created_at', 'desc')->take(4)->get();
         }
 
         //getting most view alltime blog
