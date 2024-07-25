@@ -12,8 +12,34 @@
                     @if (session('danger'))
                         <div class="alert alert-danger">{{ session('danger') }}</div>
                     @endif
-                    <div class="card-header">
-                        <h4 class="card-title">Blogs List View</h4>
+                    <div class="card-header" style="justify-content: space-between">
+                        <div class="row" style="width: 100%">
+                            <div class="col-md-4">
+                                <h4 class="card-title">Blogs List</h4>
+                            </div>
+                            <div class="col-md-8">
+                                <form action="" method="get">
+                                    <div class="row">
+                                        <div class="col-md-8 d-flex">
+                                            <select class="form-control" name="category" id="">
+                                                <option value="">Selecet Category</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        {{ request()->has('category') && request()->category == $category->id ? 'selected' : '' }}>
+                                                        {{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                            <input class="form-control" type="text" name="search"
+                                                value="{{ request()->search }}" placeholder="Search">
+                                        </div>
+                                        <div class="col-md-4 d-flex">
+                                            <button class="btn btn-primary">Search</button>
+                                            <a href="{{ route('blog.create') }}" class="btn btn-danger">Clear</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -70,6 +96,9 @@
                         @endforeach
                         </tbody>
                         </table>
+                    </div>
+                    <div>
+                        {{ $blog->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
             </div>

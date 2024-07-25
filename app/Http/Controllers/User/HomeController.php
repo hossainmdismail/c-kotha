@@ -14,6 +14,7 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\TwitterCard;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -82,18 +83,29 @@ class HomeController extends Controller
             ]);
         }
 
+        //Category
         $category = Category::where('status', 'active')->get();
 
+        //Monthly best
+        $thirtyDaysAgo = Carbon::now()->subDays(30);
+        $bestMonth = Blog::where('status', 'active')
+            ->where('created_at', '>=', $thirtyDaysAgo)
+            ->orderBy('view_count', 'desc')
+            ->take(4)
+            ->get();
+
         //getting most view alltime blog
-        $best = Blog::orderBy('view_count', 'desc')->take(4)->get();
+        $best = Blog::where('status', 'active')->orderBy('view_count', 'desc')->take(4)->get();
 
         //Recent
-        $recent = Blog::orderBy('id', 'desc')->take(4)->get();
+        $recent = Blog::where('status', 'active')->orderBy('id', 'desc')->take(4)->get();
 
-        $banner = Blog::where('featured', 1)->orderBy('id', 'desc')->first();
+        //Banner one post
+        $banner = Blog::where('status', 'active')->where('featured', 1)->orderBy('id', 'desc')->first();
 
         return view('Themes.theme1.index', [
             'recent'    => $recent,
+            'bestMonth' => $bestMonth,
             'bests'     => $best,
             'banner'    => $banner,
             'cats'      => $category,

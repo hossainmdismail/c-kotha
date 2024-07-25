@@ -27,9 +27,17 @@ class BlogController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        $blog = Blog::all();
+        if ($request->has('category') && $request->has('category') != null || $request->has('search') && $request->has('search') != null) {
+            $blog = Blog::where('status', 'active')
+                ->where('category_id', $request->category)
+                ->where('title', 'like', '%' . $request->search . '%')
+                ->orderBy('id', 'DESC')
+                ->paginate(12);
+        } else {
+            $blog = Blog::where('status', 'active')->orderBy('id', 'DESC')->paginate(12);
+        }
         $category = Category::all();
         return view('dashboard.blog.create', [
             'blog'          => $blog,

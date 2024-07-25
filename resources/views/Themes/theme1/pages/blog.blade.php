@@ -11,18 +11,28 @@
     <section class="main-content mt-3">
         <div class="container-xl">
 
-            <nav aria-label="breadcrumb">
+            <nav aria-label="breadcrumb" style="display: flex; justify-content: space-between;">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-items"><a href="#">Home</a></li><span class="breadcrumb-breaker">/</span>
                     <li class="breadcrumb-items"><a href="#">Blog</a></li><span class="breadcrumb-breaker">/</span>
                 </ol>
+
+                <div class="d-md-none">
+                    <form action="" method="post">
+                        @csrf
+                        <select class="form-control" name="filter_cat">
+                            <option value="">Filter by Category</option>
+                            <option value="1">Search</option>
+                        </select>
+                    </form>
+                </div>
             </nav>
 
             <div class="row gy-4">
                 <div class="col-lg-8">
                     <div class="row gy-4">
                         @foreach ($blogs as $blog)
-                            <div class="col-lg-6 mb-2">
+                            <div class="col-12 col-md-6 mb-2">
                                 <x-blog-main :blog="$blog" />
                             </div>
                         @endforeach
@@ -44,11 +54,11 @@
                     <div class="sidebar">
                         <!-- widget about -->
                         <div class="widget rounded">
-                            <div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png">
-                                <img src="images/logo.svg" alt="logo" class="mb-4" />
-                                <p class="mb-4 bd-font">প্লিজ বস, আপনার ধোনের পানি ফেলে দিচ্ছি আমি, তাও আমার ক্ষতি করেন না
-                                    আপনি।
-                                    যেভাবে বলবেন সেভাবেই আপনার পানি বের করে দিচ্ছি
+                            <div class="widget-about data-bg-image text-center"
+                                data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
+                                <p class="mb-4 bd-font">টি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম যেখানে আপনি আপনার অভিজ্ঞতা ও
+                                    স্বীকারোক্তি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার কাহিনী শুনুন ও অন্যদের
+                                    কাহিনী পড়ুন
                                 </p>
                             </div>
                         </div>

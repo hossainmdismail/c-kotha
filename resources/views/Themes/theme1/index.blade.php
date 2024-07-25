@@ -104,7 +104,7 @@
                             <!-- popular posts -->
                             <div aria-labelledby="popular-tab" class="tab-pane fade show active" id="popular"
                                 role="tabpanel">
-                                @foreach ($bests as $key => $blog)
+                                @foreach ($bestMonth as $key => $blog)
                                     <x-blog-list :blog="$blog" key="{{ convert_to_bengali($key + 1) }}" />
                                 @endforeach
                             </div>
@@ -208,7 +208,7 @@
                                         <div class="col-6 fw-bolder" style="text-align: end">
                                             <p class="text-secondary" style="display: flex;justify-content: flex-end;">
                                                 <img src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                                                    alt="{{ $blog->author }}">156 view
+                                                    alt="{{ $blog->author }}">{{ $blog->view_count }} view
                                             </p>
                                         </div>
                                     </div>

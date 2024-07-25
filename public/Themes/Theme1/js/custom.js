@@ -1,9 +1,19 @@
-$(window).on("load", function () {
+// $(window).on("load", function () {
+//     "use strict";
+//     /*=========================================================================
+//             Preloader
+//     =========================================================================*/
+//     $("#preloader").delay(750).fadeOut("slow");
+// });
+
+$(document).ready(function () {
     "use strict";
     /*=========================================================================
             Preloader
     =========================================================================*/
-    $("#preloader").delay(750).fadeOut("slow");
+    setTimeout(function() {
+        $("#preloader").fadeOut("slow");
+    }, 500); // Preloader will be visible for 1 second (1000 milliseconds)
 });
 
 /*=========================================================================
