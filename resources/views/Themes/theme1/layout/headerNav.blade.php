@@ -26,7 +26,8 @@
                          </ul>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="#">Share Story</a>
+                         <a class="nav-link" href="https://t.me/+parvyvrA_7Y1ZjJl" target="_blank" rel="nofollow">Share
+                             Story</a>
                      </li>
                      <li class="nav-item">
                          <a class="nav-link" href="{{ route('contact') }}">Contact</a>

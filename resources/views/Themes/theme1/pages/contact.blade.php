@@ -74,7 +74,8 @@
                                 যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
                                 কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
                             </p>
-                            <button class="btn btn-default btn-full" type="submit">Share story</button>
+                            <a href="https://t.me/+parvyvrA_7Y1ZjJl" target="_blank" class="btn btn-default btn-full"
+                                rel="nofollow">Share story</a>
                         </div>
                     </div>
                 </div>

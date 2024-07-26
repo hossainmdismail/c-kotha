@@ -11,19 +11,30 @@
     <section class="main-content mt-3">
         <div class="container-xl">
 
-            <nav aria-label="breadcrumb" style="display: flex; justify-content: space-between;">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-items"><a href="#">Home</a></li><span class="breadcrumb-breaker">/</span>
-                    <li class="breadcrumb-items"><a href="#">Blog</a></li><span class="breadcrumb-breaker">/</span>
+            <nav aria-label="breadcrumb"
+                style="display: flex; justify-content: space-between;align-items: center;margin-bottom: 10px">
+                <ol class="breadcrumb" style="margin-bottom: 0 !important">
+                    <li class="breadcrumb-items"><a href="{{ route('home') }}">Home</a></li><span
+                        class="breadcrumb-breaker">/</span>
+                    <li class="breadcrumb-items"><a href="#">Blogs</a></li>
                 </ol>
 
                 <div class="d-md-none">
-                    <form action="" method="post">
+                    <form method="get">
                         @csrf
-                        <select class="form-control" name="filter_cat">
-                            <option value="">Filter by Category</option>
-                            <option value="1">Search</option>
-                        </select>
+                        <div style="display: flex;align-items: center;column-gap: 4px;">
+                            <select class="form-control form-control-sm" name="category_id">
+                                <option value="">Filter clear</option>
+                                @foreach ($cats as $cat)
+                                    <option value="{{ $cat->id }}"
+                                        {{ request()->has('category_id') && request()->category_id == $cat->id ? 'selected' : '' }}>
+                                        {{ $cat->name }}</option>
+                                @endforeach
+                            </select>
+                            <div class="ml-1">
+                                <button class="btn btn-default btn-sm">Search</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </nav>

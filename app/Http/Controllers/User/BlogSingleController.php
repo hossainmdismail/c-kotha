@@ -131,8 +131,19 @@ class BlogSingleController extends Controller
             return back();
         }
     }
-    public function blogs()
+    public function blogs(Request $request)
     {
+        $categoryBlog = [];
+
+        if ($request->has('category_id') && $request->category_id != null) {
+            $categoryBlog = Blog::where('status', 'active')
+                ->where('category_id', $request->category_id)
+                ->orderBy('id', 'DESC')
+                ->paginate(12);
+        } else {
+            $categoryBlog = Blog::where('status', 'active')->orderBy('id', 'DESC')->paginate(12);
+        }
+
         $category = Category::where('status', 'active')->get();
 
         //getting most view alltime blog
@@ -140,9 +151,6 @@ class BlogSingleController extends Controller
 
         //Recent
         $recent = Blog::orderBy('id', 'desc')->take(4)->get();
-
-        //category product
-        $categoryBlog = Blog::where('status', 'active')->paginate(12);
 
         return view('Themes.theme1.pages.blog', [
             'blogs'     => $categoryBlog,
