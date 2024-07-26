@@ -65,7 +65,7 @@
                 <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave">
             </div> --}}
             <div class="row">
-                <div class="col-4 m-auto">
+                <div class="col-md-4 m-auto">
                     <!-- widget about -->
                     <div class="widget rounded">
                         <div class="widget-about data-bg-image text-center"
