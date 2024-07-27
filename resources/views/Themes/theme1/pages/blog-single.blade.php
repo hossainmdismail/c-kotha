@@ -157,7 +157,7 @@
                     <div class="widget rounded">
                         <div id="ad-one" class="ad"
                             style="display: flex; justify-content: center; padding-bottom: 13px;">
-                            <ins class="eas6a97888e2" data-zoneid="5370852"></ins>
+                            <ins class="eas6a97888e38" data-zoneid="5370916"></ins>
                             <script>
                                 (AdProvider = window.AdProvider || []).push({
                                     "serve": {}
@@ -311,8 +311,16 @@
 
         </div>
     </section>
-    <div class="adds">
+    <div class="d-block d-md-none">
         <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
+        <script>
+            (AdProvider = window.AdProvider || []).push({
+                "serve": {}
+            });
+        </script>
+    </div>
+    <div class="d-none d-md-block">
+        <ins class="eas6a97888e17" data-zoneid="5370920" data-sub="123450000"></ins>
         <script>
             (AdProvider = window.AdProvider || []).push({
                 "serve": {}
