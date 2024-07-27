@@ -105,13 +105,9 @@
 
         @yield('content')
         {{-- main body --}}
-
-
-        {{-- this is for custom codes --}}
-        @include('Themes.theme1.layout.footerSection')
-
     </div><!-- end site wrapper -->
-
+    {{-- this is for custom codes --}}
+    @include('Themes.theme1.layout.footerSection')
     <!-- canvas menu -->
     <div class="canvas-menu d-flex align-items-end flex-column">
         <!-- close button -->
@@ -125,8 +121,11 @@
         <!-- menu -->
         <nav>
             <ul class="vertical-menu">
-                <li class="active">
-                    <a href="#">চটি গল্প</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('blog.all') }}">চটি গল্প</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#">চটি ভান্ডার</a>
                     <ul class="submenu">
                         @foreach ($categories as $category)
                             <li><a class="dropdown-item"
@@ -136,8 +135,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Share Story</a>
+                    <a class="nav-link" href="https://t.me/+parvyvrA_7Y1ZjJl" rel="nofollow">Share Story</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about') }}">About</a>

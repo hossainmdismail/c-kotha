@@ -1,5 +1,13 @@
 @extends('Themes.theme1.layout.app')
-
+@section('style')
+    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+    <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
+    <script>
+        (AdProvider = window.AdProvider || []).push({
+            "serve": {}
+        });
+    </script>
+@endsection
 @section('content')
     <section class="page-header">
         <div class="container-xl">

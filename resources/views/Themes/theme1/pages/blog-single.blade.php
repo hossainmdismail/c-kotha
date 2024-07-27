@@ -9,6 +9,42 @@
     }
 @endphp
 @extends('Themes.theme1.layout.app')
+@section('style')
+    <style>
+        /* Styles for the footer ad and close button */
+        #footer-ad {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: #f1f1f1;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+            /* Initially hidden */
+        }
+
+        #footer-ad .close-btn {
+            position: absolute;
+            right: 10px;
+            top: -115px;
+            cursor: pointer;
+            background: #ff5c5c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+        .ad-container {
+            display: none;
+            /* Initially hidden */
+        }
+    </style>
+    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+@endsection
 @section('content')
     <section class="main-content mt-3">
         <div class="container-xl">
@@ -39,9 +75,25 @@
                         </div>
                         <!-- post content -->
                         <div class="post-content clearfix">
+                            <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
+                                <ins class="eas6a97888e2" data-zoneid="5370860" data-sub="123450000"></ins>
+                                <script>
+                                    (AdProvider = window.AdProvider || []).push({
+                                        "serve": {}
+                                    });
+                                </script>
+                            </div>
                             <div class="entry-content bd-font" itemprop="text">
                                 {!! $blog->content !!}
                             </div>
+                        </div>
+                        <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
+                            <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
+                            <script>
+                                (AdProvider = window.AdProvider || []).push({
+                                    "serve": {}
+                                });
+                            </script>
                         </div>
                         <!-- post bottom section -->
                         <div class="post-bottom">
@@ -134,154 +186,199 @@
                 </div>
 
                 <div class="col-lg-4">
+                    {{-- ex ads number one --}}
+                    <div class="widget rounded">
+                        <div id="ad-one" class="ad"
+                            style="display: flex; justify-content: center; padding-bottom: 13px;">
+                            <ins class="eas6a97888e2" data-zoneid="5370852"></ins>
+                            <script>
+                                (AdProvider = window.AdProvider || []).push({
+                                    "serve": {}
+                                });
+                            </script>
+                        </div>
+                    </div>
 
-                    <!-- sidebar -->
-                    <div class="sidebar">
-                        <!-- widget about -->
-                        <div class="widget rounded">
-                            <div class="widget-about data-bg-image text-center"
-                                data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
-                                <p class="mb-4 bd-font mb-3" style="color: #203656">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম
-                                    যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
-                                    কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
-                                </p>
-                                <a href="https://t.me/+parvyvrA_7Y1ZjJl" target="_blank" rel="nofollow"
-                                    class="btn btn-default btn-full" type="submit">Share story</a>
-                            </div>
+                    <!-- widget popular posts -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title bd-font">চিরকাল বিখ্যাত</h3>
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            @foreach ($bests as $key => $best)
+                                <!-- post -->
+                                <div class="post post-list-sm circle">
+                                    <div class="thumb circle">
+                                        <a href="{{ route('blog.view', $best->slug) }}">
+                                            <div class="inner">
+                                                <span class="inner-text bd-font">{{ convert_to_bengali($key + 1) }}</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="details clearfix">
+                                        <h6 class="post-title my-0 bd-font"><a
+                                                href="{{ route('blog.view', $best->slug) }}">{{ $best->title }}</a>
+                                        </h6>
+                                        <ul class="meta list-inline mt-1 mb-0">
+                                            <li class="list-inline-item">{{ $best->gettingDate() }}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- widget categories -->
+                    <div class="widget rounded bd-font">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">বিভাগ</h3>
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            <ul class="list">
+                                @foreach ($cats as $cat)
+                                    <li><a
+                                            href="{{ route('category.view', $cat->slug) }}">{{ $cat->name }}</a><span>({{ $cat->blogs ? $cat->blogs->count() : '0' }})</span>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
 
-                        <!-- widget popular posts -->
-                        <div class="widget rounded">
-                            <div class="widget-header text-center">
-                                <h3 class="widget-title bd-font">চিরকাল বিখ্যাত</h3>
-                                <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
-                            </div>
-                            <div class="widget-content">
-                                @foreach ($bests as $key => $best)
-                                    <!-- post -->
-                                    <div class="post post-list-sm circle">
-                                        <div class="thumb circle">
-                                            <a href="{{ route('blog.view', $best->slug) }}">
-                                                <div class="inner">
-                                                    <span
-                                                        class="inner-text bd-font">{{ convert_to_bengali($key + 1) }}</span>
+                    </div>
+                    <!-- widget about -->
+                    <div class="widget rounded">
+                        <div class="widget-about data-bg-image text-center"
+                            data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
+                            <p class="mb-4 bd-font mb-3" style="color: #203656">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম
+                                যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
+                                কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
+                            </p>
+                            <a href="https://t.me/+parvyvrA_7Y1ZjJl" target="_blank" rel="nofollow"
+                                class="btn btn-default btn-full" type="submit">Share story</a>
+                        </div>
+                    </div>
+                    <!-- widget newsletter -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title bd-font">সংযুক্ত থাকুন</h3>
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            <span class="newsletter-headline text-center mb-3">Join ৭০,০০০ subscribers!</span>
+                            <form>
+                                <div class="mb-2">
+                                    <input class="form-control w-100 text-center" placeholder="Email address…"
+                                        type="email">
+                                </div>
+                                <button class="btn btn-default btn-full" type="submit">Sign Up</button>
+                            </form>
+                            <span class="newsletter-privacy text-center mt-3">By signing up, you agree to our <a
+                                    href="{{ route('privacy') }}">Privacy Policy</a></span>
+                        </div>
+                    </div>
+
+                    <!-- widget post carousel -->
+                    <div class="widget rounded">
+                        <div class="widget-header text-center">
+                            <h3 class="widget-title">Celebration</h3>
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                        </div>
+                        <div class="widget-content">
+                            <div class="post-carousel-widget">
+                                <!-- post -->
+                                @foreach ($recent as $blog)
+                                    <div class="card bd-card p-1 position-relative shadow-sm rounded bd-font">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <a href="{{ route('blog.view', $blog->slug) }}">
+                                                        <h5 class="fw-bolder" style="color: #C60B0D !important;">
+                                                            {{ $blog->title }}</h5>
+                                                    </a>
+                                                    <p class="text-secondary mt-3">{{ $blog->seo_description }}</p>
                                                 </div>
-                                            </a>
-                                        </div>
-                                        <div class="details clearfix">
-                                            <h6 class="post-title my-0 bd-font"><a
-                                                    href="{{ route('blog.view', $best->slug) }}">{{ $best->title }}</a>
-                                            </h6>
-                                            <ul class="meta list-inline mt-1 mb-0">
-                                                <li class="list-inline-item">{{ $best->gettingDate() }}</li>
-                                            </ul>
+                                            </div>
+                                            <div class="row" style="font-size: 13px">
+                                                <div class="col-6 text-secondary">
+                                                    by <span class="text-uppercase fw-bolder">{{ $blog->author }}</span>
+                                                </div>
+                                                <div class="col-6 fw-bolder" style="text-align: end">
+                                                    <p class="text-secondary"
+                                                        style="display: flex;justify-content: flex-end;"><img
+                                                            src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
+                                                            alt="">{{ $blog->view_count }} view</p>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 @endforeach
                             </div>
-                        </div>
-
-                        <!-- widget categories -->
-                        <div class="widget rounded bd-font">
-                            <div class="widget-header text-center">
-                                <h3 class="widget-title">বিভাগ</h3>
-                                <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
-                            </div>
-                            <div class="widget-content">
-                                <ul class="list">
-                                    @foreach ($cats as $cat)
-                                        <li><a
-                                                href="{{ route('category.view', $cat->slug) }}">{{ $cat->name }}</a><span>({{ $cat->blogs ? $cat->blogs->count() : '0' }})</span>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
-
-                        </div>
-
-                        <!-- widget newsletter -->
-                        <div class="widget rounded">
-                            <div class="widget-header text-center">
-                                <h3 class="widget-title bd-font">সংযুক্ত থাকুন</h3>
-                                <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
-                            </div>
-                            <div class="widget-content">
-                                <span class="newsletter-headline text-center mb-3">Join ৭০,০০০ subscribers!</span>
-                                <form>
-                                    <div class="mb-2">
-                                        <input class="form-control w-100 text-center" placeholder="Email address…"
-                                            type="email">
-                                    </div>
-                                    <button class="btn btn-default btn-full" type="submit">Sign Up</button>
-                                </form>
-                                <span class="newsletter-privacy text-center mt-3">By signing up, you agree to our <a
-                                        href="{{ route('privacy') }}">Privacy Policy</a></span>
+                            <!-- carousel arrows -->
+                            <div class="slick-arrows-bot">
+                                <button type="button" data-role="none" class="carousel-botNav-prev slick-custom-buttons"
+                                    aria-label="Previous"><i class="icon-arrow-left"></i></button>
+                                <button type="button" data-role="none" class="carousel-botNav-next slick-custom-buttons"
+                                    aria-label="Next"><i class="icon-arrow-right"></i></button>
                             </div>
                         </div>
-
-                        <!-- widget post carousel -->
-                        <div class="widget rounded">
-                            <div class="widget-header text-center">
-                                <h3 class="widget-title">Celebration</h3>
-                                <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
-                            </div>
-                            <div class="widget-content">
-                                <div class="post-carousel-widget">
-                                    <!-- post -->
-                                    @foreach ($recent as $blog)
-                                        <div class="card bd-card p-1 position-relative shadow-sm rounded bd-font">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <a href="{{ route('blog.view', $blog->slug) }}">
-                                                            <h5 class="fw-bolder" style="color: #C60B0D !important;">
-                                                                {{ $blog->title }}</h5>
-                                                        </a>
-                                                        <p class="text-secondary mt-3">{{ $blog->seo_description }}</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row" style="font-size: 13px">
-                                                    <div class="col-6 text-secondary">
-                                                        by <span
-                                                            class="text-uppercase fw-bolder">{{ $blog->author }}</span>
-                                                    </div>
-                                                    <div class="col-6 fw-bolder" style="text-align: end">
-                                                        <p class="text-secondary"
-                                                            style="display: flex;justify-content: flex-end;"><img
-                                                                src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                                                                alt="">{{ $blog->view_count }} view</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                <!-- carousel arrows -->
-                                <div class="slick-arrows-bot">
-                                    <button type="button" data-role="none"
-                                        class="carousel-botNav-prev slick-custom-buttons" aria-label="Previous"><i
-                                            class="icon-arrow-left"></i></button>
-                                    <button type="button" data-role="none"
-                                        class="carousel-botNav-next slick-custom-buttons" aria-label="Next"><i
-                                            class="icon-arrow-right"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- widget advertisement -->
-                        <div class="widget no-container rounded text-md-center">
-                            <span class="ads-title">- Sponsored Ad -</span>
-                            <a href="#" class="widget-ads">
-                                <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" alt="Advertisement" />
-                            </a>
-                        </div>
-
                     </div>
 
+                    <!-- widget advertisement -->
+                    <div class="widget no-container rounded text-md-center">
+                        <span class="ads-title">- Sponsored Ad -</span>
+                        {{-- ex ads number one --}}
+                        <div id="ad-one" class="ad"
+                            style="display: flex; justify-content: center; padding-bottom: 13px;">
+                            <ins class="eas6a97888e2" data-zoneid="5370890"></ins>
+                            <script>
+                                (AdProvider = window.AdProvider || []).push({
+                                    "serve": {}
+                                });
+                            </script>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
         </div>
     </section>
+    <div id="footer-ad">
+        <button class="close-btn" onclick="document.getElementById('footer-ad').style.display='none'">X</button>
+        <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
+        <script>
+            (AdProvider = window.AdProvider || []).push({
+                "serve": {}
+            });
+        </script>
+    </div>
+@endsection
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var adContainer = document.getElementById('footer-ad');
+            var closeButton = document.getElementById('close-ad-btn');
+
+            function showAd() {
+                if (!sessionStorage.getItem('adClosed')) {
+                    adContainer.style.display = 'block';
+                }
+            }
+
+            function closeAd() {
+                adContainer.style.display = 'none';
+                sessionStorage.setItem('adClosed', 'true');
+                setTimeout(function() {
+                    sessionStorage.removeItem('adClosed');
+                }, 1 * 60 * 1000); // 2 minutes in milliseconds
+            }
+
+            // Show the ad 1 minute after the user enters the website
+            setTimeout(showAd, 7 * 1000); // 1 minute in milliseconds
+
+            // Add the click event listener to the close button
+            closeButton.addEventListener('click', closeAd);
+        });
+    </script>
 @endsection

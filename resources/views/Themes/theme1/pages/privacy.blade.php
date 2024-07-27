@@ -1,5 +1,7 @@
 @extends('Themes.theme1.layout.app')
-
+@section('style')
+    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+@endsection
 @section('content')
     <section class="page-header">
         <div class="container-xl">

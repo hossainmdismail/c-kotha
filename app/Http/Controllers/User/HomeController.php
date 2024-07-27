@@ -126,7 +126,7 @@ class HomeController extends Controller
         $recent = Blog::orderBy('id', 'desc')->take(4)->get();
 
         //category product
-        $categoryBlog = Blog::where('category_id', $categoryView->id)->paginate(12);
+        $categoryBlog = Blog::where('category_id', $categoryView->id)->orderBy('id', 'DESC')->paginate(14);
 
         if ($categoryView) {
 
