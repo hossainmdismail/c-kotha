@@ -10,39 +10,6 @@
 @endphp
 @extends('Themes.theme1.layout.app')
 @section('style')
-    <style>
-        /* Styles for the footer ad and close button */
-        #footer-ad {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: #f1f1f1;
-            border-top: 1px solid #ccc;
-            text-align: center;
-            padding: 10px;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: none;
-            /* Initially hidden */
-        }
-
-        #footer-ad .close-btn {
-            position: absolute;
-            right: 10px;
-            top: -115px;
-            cursor: pointer;
-            background: #ff5c5c;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-        }
-
-        .ad-container {
-            display: none;
-            /* Initially hidden */
-        }
-    </style>
     <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
 @endsection
 @section('content')
@@ -344,8 +311,7 @@
 
         </div>
     </section>
-    <div id="footer-ad">
-        <button class="close-btn" onclick="document.getElementById('footer-ad').style.display='none'">X</button>
+    <div class="adds">
         <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
         <script>
             (AdProvider = window.AdProvider || []).push({
