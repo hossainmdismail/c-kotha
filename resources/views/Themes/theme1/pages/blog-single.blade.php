@@ -43,7 +43,7 @@
                         <!-- post content -->
                         <div class="post-content clearfix">
                             <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
-                                <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
+                                <ins class="eas6a97888e2" data-zoneid="5370860" data-sub="123450000"></ins>
                                 <script>
                                     (AdProvider = window.AdProvider || []).push({
                                         "serve": {}
@@ -327,32 +327,4 @@
             });
         </script>
     </div>
-@endsection
-@section('scripts')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var adContainer = document.getElementById('footer-ad');
-            var closeButton = document.getElementById('close-ad-btn');
-
-            function showAd() {
-                if (!sessionStorage.getItem('adClosed')) {
-                    adContainer.style.display = 'block';
-                }
-            }
-
-            function closeAd() {
-                adContainer.style.display = 'none';
-                sessionStorage.setItem('adClosed', 'true');
-                setTimeout(function() {
-                    sessionStorage.removeItem('adClosed');
-                }, 1 * 60 * 1000); // 2 minutes in milliseconds
-            }
-
-            // Show the ad 1 minute after the user enters the website
-            setTimeout(showAd, 7 * 1000); // 1 minute in milliseconds
-
-            // Add the click event listener to the close button
-            closeButton.addEventListener('click', closeAd);
-        });
-    </script>
 @endsection
