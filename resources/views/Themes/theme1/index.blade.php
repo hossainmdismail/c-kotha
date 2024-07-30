@@ -149,7 +149,7 @@
 
                     <!-- horizontal ads -->
                     <div class="ads-horizontal text-md-center" style="overflow: hidden">
-                        <ins class="eas6a97888e2" data-zoneid="5370860" data-sub="123450000"></ins>
+                        <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
                         <script>
                             (AdProvider = window.AdProvider || []).push({
                                 "serve": {}

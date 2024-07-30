@@ -25,7 +25,7 @@
             <div class="row gy-4">
                 <div class="col-lg-8">
                     <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
-                        <ins class="eas6a97888e2" data-zoneid="5370860" data-sub="123450000"></ins>
+                        <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
                         <script>
                             (AdProvider = window.AdProvider || []).push({
                                 "serve": {}
