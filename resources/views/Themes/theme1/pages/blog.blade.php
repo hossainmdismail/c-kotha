@@ -8,7 +8,7 @@
 @endphp
 @extends('Themes.theme1.layout.app')
 @section('style')
-    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+    {{-- <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> --}}
 @endsection
 @section('content')
     <section class="main-content mt-3">
@@ -45,14 +45,14 @@
             <div class="row gy-4">
                 <div class="col-lg-8">
                     <!-- horizontal ads -->
-                    <div class="ads-horizontal text-md-center" style="overflow: hidden; padding: 10px 0">
+                    {{-- <div class="ads-horizontal text-md-center" style="overflow: hidden; padding: 10px 0">
                         <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
                         <script>
                             (AdProvider = window.AdProvider || []).push({
                                 "serve": {}
                             });
                         </script>
-                    </div>
+                    </div> --}}
                     <div class="row gy-4">
                         @foreach ($blogs as $blog)
                             <div class="col-12 col-md-6 mb-2">
@@ -80,8 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="widget rounded">
-                        {{-- ex ads number one --}}
+                    {{-- <div class="widget rounded">
                         <div id="ad-one" class="ad"
                             style="display: flex; justify-content: center; padding-bottom: 13px;">
                             <ins class="eas6a97888e2" data-zoneid="5370890" data-sub="123450000"></ins>
@@ -91,7 +90,7 @@
                                 });
                             </script>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- widget categories -->
                     <div class="widget rounded bd-font">
@@ -211,7 +210,7 @@
                     <div class="widget no-container rounded text-md-center">
                         <span class="ads-title">- Sponsored Ad -</span>
                         {{-- ex ads number one --}}
-                        <div id="ad-one" class="ad"
+                        {{-- <div id="ad-one" class="ad"
                             style="display: flex; justify-content: center; padding-bottom: 13px;">
                             <ins class="eas6a97888e2" data-zoneid="5370852"></ins>
                             <script>
@@ -219,7 +218,7 @@
                                     "serve": {}
                                 });
                             </script>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 

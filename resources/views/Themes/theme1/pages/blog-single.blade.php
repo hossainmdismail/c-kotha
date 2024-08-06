@@ -10,7 +10,7 @@
 @endphp
 @extends('Themes.theme1.layout.app')
 @section('style')
-    <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+    {{-- <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> --}}
 @endsection
 @section('content')
     <section class="main-content mt-3">
@@ -42,26 +42,26 @@
                         </div>
                         <!-- post content -->
                         <div class="post-content clearfix">
-                            <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
+                            {{-- <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
                                 <ins class="eas6a97888e2" data-zoneid="5370860" data-sub="123450000"></ins>
                                 <script>
                                     (AdProvider = window.AdProvider || []).push({
                                         "serve": {}
                                     });
                                 </script>
-                            </div>
+                            </div> --}}
                             <div class="entry-content bd-font" itemprop="text">
                                 {!! $blog->content !!}
                             </div>
                         </div>
-                        <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
+                        {{-- <div class="ads" style="display: block; overflow: hidden;padding: 17px 0;">
                             <ins class="eas6a97888e2" data-zoneid="5370854" data-sub="123450000"></ins>
                             <script>
                                 (AdProvider = window.AdProvider || []).push({
                                     "serve": {}
                                 });
                             </script>
-                        </div>
+                        </div> --}}
                         <!-- post bottom section -->
                         <div class="post-bottom">
                             <div class="row d-flex align-items-center">
@@ -154,7 +154,7 @@
 
                 <div class="col-lg-4">
                     {{-- ex ads number one --}}
-                    <div class="widget rounded">
+                    {{-- <div class="widget rounded">
                         <div id="ad-one" class="ad"
                             style="display: flex; justify-content: center; padding-bottom: 13px;">
                             <ins class="eas6a97888e38" data-zoneid="5370916"></ins>
@@ -164,7 +164,7 @@
                                 });
                             </script>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- widget popular posts -->
                     <div class="widget rounded">
@@ -295,7 +295,7 @@
                     <div class="widget no-container rounded text-md-center">
                         <span class="ads-title">- Sponsored Ad -</span>
                         {{-- ex ads number one --}}
-                        <div id="ad-one" class="ad"
+                        {{-- <div id="ad-one" class="ad"
                             style="display: flex; justify-content: center; padding-bottom: 13px;">
                             <ins class="eas6a97888e2" data-zoneid="5370890"></ins>
                             <script>
@@ -303,7 +303,7 @@
                                     "serve": {}
                                 });
                             </script>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 
@@ -311,7 +311,7 @@
 
         </div>
     </section>
-    <div class="d-block d-md-none">
+    {{-- <div class="d-block d-md-none">
         <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
         <script>
             (AdProvider = window.AdProvider || []).push({
@@ -326,5 +326,5 @@
                 "serve": {}
             });
         </script>
-    </div>
+    </div> --}}
 @endsection
