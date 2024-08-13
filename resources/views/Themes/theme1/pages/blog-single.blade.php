@@ -11,6 +11,35 @@
 @extends('Themes.theme1.layout.app')
 @section('style')
     {{-- <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script> --}}
+    <style>
+        h2 {
+            font-size: 24px;
+            margin: 0;
+            font-family: 'Anek Bangla' !important;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 0;
+            font-family: 'Anek Bangla' !important;
+        }
+
+        h4 {
+            font-size: 16px;
+            margin: 0;
+            font-family: 'Anek Bangla' !important;
+        }
+
+        .entry-content li::marker {
+            color: #c80b0d;
+        }
+
+        u {
+            color: #c80b0d;
+            text-decoration: none;
+        }
+    </style>
 @endsection
 @section('content')
     <section class="main-content mt-3">
