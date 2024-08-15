@@ -4,7 +4,7 @@
          <div class="container-xl">
              <!-- site logo -->
              <a class="navbar-brand" href="{{ route('home') }}"><img style="width: 120px"
-                     src="{{ asset($config ? $config->logo : '') }}" alt="logo" /></a>
+                     src="{{ asset($config ? $config->logo : '') }}" alt="Choti Kotha" title="Choti Kotha" /></a>
 
              <div class="collapse navbar-collapse">
                  <!-- menus -->

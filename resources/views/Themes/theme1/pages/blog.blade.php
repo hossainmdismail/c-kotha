@@ -73,10 +73,22 @@
                     <div class="widget rounded">
                         <div class="widget-about data-bg-image text-center"
                             data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
-                            <p class="mb-4 bd-font">টি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম যেখানে আপনি আপনার অভিজ্ঞতা ও
+                            <h1 class="bd-font" style="font-size: 15px">Bangla Choti Golpo & Panu Stories - Choti
+                                Kotha</h1>
+                            <h3 class="mb-4 bd-font" style="font-size: 14px; line-height: 1.7;">চটি কথা, একটি অনন্য অনলাইন
+                                প্ল্যাটফর্ম যেখানে আপনি আপনার অভিজ্ঞতা ও
                                 স্বীকারোক্তি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার কাহিনী শুনুন ও অন্যদের
                                 কাহিনী পড়ুন
-                            </p>
+                            </h3>
+                            <ul class="social-icons list-unstyled list-inline mb-0">
+                                <li class="list-inline-item"><a href="https://www.instagram.com/cht.kotha"
+                                        rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="https://www.pinterest.com/ChotiKotha/"
+                                        rel="noopener noreferrer" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -96,7 +108,8 @@
                     <div class="widget rounded bd-font">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">বিভাগ</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">
@@ -114,7 +127,8 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title bd-font">চিরকাল বিখ্যাত</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             @foreach ($bests as $key => $best)
@@ -144,7 +158,8 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title bd-font">সংযুক্ত থাকুন</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <span class="newsletter-headline text-center mb-3">Join ৭০,০০০ subscribers!</span>
@@ -164,7 +179,8 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">Celebration</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <div class="post-carousel-widget">
@@ -189,7 +205,9 @@
                                                     <p class="text-secondary"
                                                         style="display: flex;justify-content: flex-end;"><img
                                                             src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                                                            alt="">156 view</p>
+                                                            alt="{{ $blog->title }}"
+                                                            title="Choti Kotha">{{ number_format($blog->view_count) }}
+                                                        view</p>
                                                 </div>
                                             </div>
                                         </div>

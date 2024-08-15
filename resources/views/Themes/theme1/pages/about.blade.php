@@ -1,5 +1,5 @@
 @extends('Themes.theme1.layout.app')
-@section('style')
+{{-- @section('style')
     <script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
     <ins class="eas6a97888e14" data-zoneid="5370834"></ins>
     <script>
@@ -7,7 +7,7 @@
             "serve": {}
         });
     </script>
-@endsection
+@endsection --}}
 @section('content')
     <section class="page-header">
         <div class="container-xl">
@@ -27,14 +27,21 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="page-content bordered rounded padding-30">
-                    <p>Welcome to <strong>ChotiKotha</strong>, the premier online community for B's living abroad.
-                        Our platform is dedicated to providing a space where members of the B' diaspora can share
-                        and explore adult stories and confessions in a respectful and supportive environment.</p>
+                    <p>Welcome to <strong>Choti Kotha</strong>, your premier destination for Bangla Choti Golpo and Panu
+                        Stories. At Choti Kotha, we take pride in offering a rich collection of captivating Bangla Choti
+                        Golpo, Panu Stories, and engaging confessions that resonate with our readers.</p>
 
                     <h5>Our Mission</h5>
-                    <p>Our mission is to create a safe, engaging, and inclusive space for B's around the world to
-                        connect through storytelling. We believe in the power of shared experiences and the importance of
-                        having a platform where adults can openly discuss and share their intimate stories without judgment.
+                    <p>Our mission at Choti Kotha is to provide a unique and immersive experience for those who enjoy Bangla
+                        Choti Golpo. We strive to bring you authentic, well-crafted stories that entertain, intrigue, and
+                        inspire. Whether you're looking for thrilling Choti Golpo or heartfelt confessions, our platform is
+                        designed to cater to all your needs.
+                    </p>
+                    <h5>What Sets Us Apart</h5>
+                    <p>
+                        At Choti Kotha, we are committed to quality and originality. Our talented writers craft each story
+                        with care, ensuring that you receive the best in Bangla Choti Golpo and Panu Stories. We
+                        continuously update our content to keep you engaged with the latest and most exciting stories.
                     </p>
 
                     <h5>What We Offer</h5>
@@ -61,22 +68,27 @@
                     </ul>
 
                     <h5>Join Our Community</h5>
-                    <p>We invite you to join our growing community of B' expatriates who are exploring and sharing
-                        their stories on ChotiKotha. Whether you're here to read, share, or simply connect with others,
-                        you'll find a welcoming and vibrant space.</p>
+                    <p>Explore the world of Choti Kotha and dive into a realm of exciting Bangla Choti Golpo and Panu
+                        Stories. Follow us for regular updates and new content that will keep you coming back for more.
+                        Thank you for being a part of our community! <br>
 
-                    <p>Thank you for being a part of ChotiKotha. If you have any questions or need assistance, please don't
-                        hesitate to reach out to us at <a href="mailto:support@chotikotha.com">support@chotikotha.com</a>.
-                    </p>
+                        Feel free to reach out to us at <a href="mailto:support@chotikotha.com">support@chotikotha.com</a>.
+                        with any questions or suggestions. <br>
+
+                        Choti Kotha – Where captivating Bangla Choti Golpo and Panu Stories come to life.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="widget rounded">
                     <div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png"
                         style="background-image: url(&quot;images/map-bg.png&quot;);">
-                        <img src="{{ asset($config ? $config->logo : '') }}" alt="logo" class="mb-4">
-                        <p class="mb-4">Hello, We’re content writer who is fascinated by content fashion, celebrity and
-                            lifestyle. We helps clients bring the right content to the right people.</p>
+                        <img src="{{ asset($config ? $config->logo : '') }}" title="Choti Kotha" alt="Choti Kotha"
+                            class="mb-4">
+                        <p class="mb-4">Choti Kotha is your ultimate destination for engaging Bangla Choti Golpo and
+                            captivating Panu Stories. Our platform offers a wide range of authentic Bangla Choti Golpo, Panu
+                            Stories, and heartfelt confessions, all crafted by talented writers. Whether you're looking for
+                            thrilling narratives or intriguing confessions, Choti Kotha provides fresh and original content
+                            to keep you entertained. Discover the best in Bangla storytelling with Choti Kotha today!</p>
                     </div>
                 </div>
             </div>

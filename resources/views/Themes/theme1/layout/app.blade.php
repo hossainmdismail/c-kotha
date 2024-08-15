@@ -12,8 +12,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
     <meta name="rating" content="adult" />
+    <meta name="author" content="Choti Kotha Team">
+    <meta name="publisher" content="Choti Kotha">
     {!! SEOMeta::generate() !!}
     {!! OpenGraph::generate() !!}
     {!! Twitter::generate() !!}
@@ -79,7 +82,7 @@
         <!-- content -->
         <div class="container">
             <div class="text-center mt-5">
-                <h3 class="mb-4 mt-0">Press ESC to close</h3>
+                <span class="mb-4 mt-0">Press ESC to close</span>
             </div>
             <!-- form -->
             <form class="d-flex search-form">
@@ -115,7 +118,7 @@
 
         <!-- logo -->
         <div class="logo">
-            <img src="{{ asset($config ? $config->logo : '') }}" alt="choti kotha" />
+            <img src="{{ asset($config ? $config->logo : '') }}" title="Choti Kotha" alt="Choti Kotha" />
         </div>
 
         <!-- menu -->

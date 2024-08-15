@@ -66,7 +66,8 @@
                                 <li class="list-inline-item"><a href="#">{{ $blog->category->name }}</a></li>
                                 <li class="list-inline-item">{{ $blog->created_at->format('d M y') }}</li>
                                 <li class="list-inline-item"><img src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                                        alt=""> <a href="#">{{ number_format($blog->view_count) }}</a></li>
+                                        title="Choti Kotha" alt="Choti Kotha"> <a
+                                        href="#">{{ number_format($blog->view_count) }}</a></li>
                             </ul>
                         </div>
                         <!-- post content -->
@@ -97,7 +98,7 @@
                                 <div class="col-md-6 col-12 text-center text-md-start">
                                     <!-- tags -->
                                     @foreach ($tags as $key => $tag)
-                                        <a href="#" class="tag">#{{ $tag }}</a>
+                                        <a href="#" class="tag" rel="tag">#{{ $tag }}</a>
                                     @endforeach
                                 </div>
                                 <div class="col-md-6 col-12">
@@ -151,7 +152,8 @@
                                                     <div class="col-6 fw-bolder" style="text-align: end">
                                                         <p class="text-secondary"><span style="padding-right: 3px"><img
                                                                     src="{{ asset('Themes/Theme1/images/eye.svg') }}"
-                                                                    alt=""></span>{{ number_format($part->part->view_count) }}
+                                                                    title="{{ $part->part->title }}"
+                                                                    alt="{{ $part->part->title }}"></span>{{ number_format($part->part->view_count) }}
                                                         </p>
                                                     </div>
                                                 </div>
@@ -169,7 +171,8 @@
                     <!-- section header -->
                     <div class="section-header">
                         <h3 class="section-title">অনুরূপ</h3>
-                        <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                        <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                            alt="Choti Kotha" />
                     </div>
 
                     <div class="row gy-5">
@@ -199,7 +202,8 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title bd-font">চিরকাল বিখ্যাত</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             @foreach ($bests as $key => $best)
@@ -229,7 +233,8 @@
                     <div class="widget rounded bd-font">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">বিভাগ</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <ul class="list">
@@ -246,19 +251,30 @@
                     <div class="widget rounded">
                         <div class="widget-about data-bg-image text-center"
                             data-bg-image="{{ asset('Themes/Theme1/images/map-bg.png') }}">
-                            <p class="mb-4 bd-font mb-3" style="color: #203656">চটি কথা, একটি অনন্য অনলাইন প্ল্যাটফর্ম
-                                যেখানে আপনি আপনার সত্যি ঘটনা ও গোপন কাহিনি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার
-                                কাহিনি শুনুন ও অন্যদের কাহিনি পড়ুন।
-                            </p>
-                            <a href="https://t.me/+parvyvrA_7Y1ZjJl" target="_blank" rel="nofollow"
-                                class="btn btn-default btn-full" type="submit">Share story</a>
+                            <h3 class="bd-font" style="font-size: 15px">Bangla Choti Golpo & Panu Stories - Choti
+                                Kotha</h3>
+                            <h3 class="mb-4 bd-font" style="font-size: 14px; line-height: 1.7;">চটি কথা, একটি অনন্য অনলাইন
+                                প্ল্যাটফর্ম যেখানে আপনি আপনার অভিজ্ঞতা ও
+                                স্বীকারোক্তি শেয়ার করতে পারেন। গোপনীয়তা বজায় রেখে, আপনার কাহিনী শুনুন ও অন্যদের
+                                কাহিনী পড়ুন
+                            </h3>
+                            <ul class="social-icons list-unstyled list-inline mb-0">
+                                <li class="list-inline-item"><a href="https://www.instagram.com/cht.kotha"
+                                        rel="noopener noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="https://www.pinterest.com/ChotiKotha/"
+                                        rel="noopener noreferrer" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                </li>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <!-- widget newsletter -->
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title bd-font">সংযুক্ত থাকুন</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <span class="newsletter-headline text-center mb-3">Join ৭০,০০০ subscribers!</span>
@@ -278,7 +294,8 @@
                     <div class="widget rounded">
                         <div class="widget-header text-center">
                             <h3 class="widget-title">Celebration</h3>
-                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" alt="wave" />
+                            <img src="{{ asset('Themes/Theme1/images/wave.svg') }}" class="wave" title="Choti Kotha"
+                                alt="Choti Kotha" />
                         </div>
                         <div class="widget-content">
                             <div class="post-carousel-widget">
@@ -303,7 +320,8 @@
                                                     <p class="text-secondary"
                                                         style="display: flex;justify-content: flex-end;"><img
                                                             src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                                                            alt="">{{ $blog->view_count }} view</p>
+                                                            alt="{{ $blog->title }}"
+                                                            title="Choti Golpo">{{ $blog->view_count }} view</p>
                                                 </div>
                                             </div>
                                         </div>

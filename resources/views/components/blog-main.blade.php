@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col">
                 <a href="{{ route('blog.view', $blog->slug) }}">
-                    <h5 class="fw-bolder bd-font">{{ $blog->title }}</h5>
+                    <h2 class="fw-bolder bd-font" style="font-size: 18px">{{ $blog->title }}</h2>
                 </a>
                 <p class="text-secondary mt-3">
                     {{ $blog->description() }}
@@ -19,8 +19,8 @@
             </div>
             <div class="col-6 fw-bolder" style="text-align: end">
                 <p class="text-secondary"><span style="padding-right: 3px"><img
-                            src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
-                            alt=""></span>{{ number_format($blog->view_count) }}</p>
+                            src="{{ asset('Themes/Theme1/images/eyebig.svg') }}" alt="{{ $blog->title }}"
+                            title="Choti kotha"></span>{{ number_format($blog->view_count) }}</p>
             </div>
         </div>
     </div>

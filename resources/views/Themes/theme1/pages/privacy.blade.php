@@ -83,7 +83,8 @@
                 <div class="widget rounded">
                     <div class="widget-about data-bg-image text-center" data-bg-image="images/map-bg.png"
                         style="background-image: url(&quot;images/map-bg.png&quot;);">
-                        <img src="{{ asset($config ? $config->logo : '') }}" alt="logo" class="mb-4">
+                        <img src="{{ asset($config ? $config->logo : '') }}" alt="Choti Kotha" title="Choti kotha"
+                            class="mb-4">
                         <p class="mb-4">Hello, We’re content writer who is fascinated by content fashion, celebrity and
                             lifestyle. We helps clients bring the right content to the right people.</p>
                     </div>
