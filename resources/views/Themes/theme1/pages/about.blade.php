@@ -73,9 +73,10 @@
                         Thank you for being a part of our community! <br>
 
                         Feel free to reach out to us at <a href="mailto:support@chotikotha.com">support@chotikotha.com</a>.
-                        with any questions or suggestions. <br>
-
-                        Choti Kotha – Where captivating Bangla Choti Golpo and Panu Stories come to life.</p>
+                        with any questions or suggestions. <br></p>
+                    <h2 style="font-size: 14px">
+                        Choti Kotha – Where captivating Bangla Choti Golpo and Panu Stories come to life.
+                    </h2>
                 </div>
             </div>
             <div class="col-md-4">
