@@ -98,23 +98,33 @@
                                 <div class="col-md-6 col-12 text-center text-md-start">
                                     <!-- tags -->
                                     @foreach ($tags as $key => $tag)
-                                        <a href="#" class="tag" rel="tag">#{{ $tag }}</a>
+                                        <h3 class="tag">{{ $tag }}</h3>
                                     @endforeach
                                 </div>
                                 <div class="col-md-6 col-12">
                                     <!-- social icons -->
                                     <ul class="social-icons list-unstyled list-inline mb-0 float-md-end">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <li class="list-inline-item"><a
+                                                href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                                target="_blank"><i class="fab fa-facebook-f"></i></a>
                                         </li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a>
+                                        <li class="list-inline-item"><a
+                                                href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($blog->title) }}"
+                                                target="_blank"><i class="fab fa-twitter"></i></a>
                                         </li>
-                                        <li class="list-inline-item"><a href="#"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a>
+                                        <li class="list-inline-item"><a
+                                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(url()->current()) }}"
+                                                target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li class="list-inline-item"><a
+                                                href="https://pinterest.com/pin/create/button/?url={{ urlencode(url()->current()) }}&media={{ url('/') . '/' . $blog->image }}&description={{ $blog->title }}"
+                                                target="_blank"><i class="fab fa-pinterest"></i></a>
                                         </li>
-                                        <li class="list-inline-item"><a href="#"><i
+                                        <li class="list-inline-item"><a
+                                                href="https://t.me/share/url?url={{ urlencode(url()->current()) }}&text={{ urlencode($blog->title) }}"><i
                                                     class="fab fa-telegram-plane"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a>
+                                        <li class="list-inline-item"><a
+                                                href="mailto:?subject={{ urlencode($blog->title) }}&body={{ urlencode(url()->current()) }}"
+                                                target="_blank"><i class="far fa-envelope"></i></a>
                                         </li>
                                     </ul>
                                 </div>
