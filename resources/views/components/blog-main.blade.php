@@ -6,7 +6,10 @@
         <div class="row">
             <div class="col">
                 <a href="{{ route('blog.view', $blog->slug) }}">
-                    <h2 class="fw-bolder bd-font" style="font-size: 18px">{{ $blog->title }}</h2>
+                    <h2 class="fw-bolder bd-font" style="font-size: 18px">{{ $blog->title }} @if ($blog->created_at->diffInDays(now()) <= 7)
+                            <span class="badge-new">New</span>
+                        @endif
+                    </h2>
                 </a>
                 <p class="text-secondary mt-3">
                     {{ $blog->description() }}

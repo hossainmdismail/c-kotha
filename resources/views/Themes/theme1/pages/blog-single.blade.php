@@ -68,6 +68,11 @@
                                 <li class="list-inline-item"><img src="{{ asset('Themes/Theme1/images/eyebig.svg') }}"
                                         title="Choti Kotha" alt="Choti Kotha"> <a
                                         href="#">{{ number_format($blog->view_count) }}</a></li>
+                                <li class="list-inline-item">
+                                    @if ($blog->created_at->diffInDays(now()) <= 7)
+                                        <span class="badge-new">New</span>
+                                    @endif
+                                </li>
                             </ul>
                         </div>
                         <!-- post content -->
